@@ -18,6 +18,6 @@ This information is all imported into Julia and the FBA evaluated in the functio
 The result of this code gives a value of -1.242. Which means the calculated max flux of Urea out of the system is 1.242 mmol/gDW-hr.
 
 ## Other cases
-I also explored the case by not allowing water to exchange by setting the maximum value of the flux in an out to zero, and repeating the calculation by running FBAsolveNoH20.jl. This leads to a different maximum value for urea of 0.828 mmol/gDW. The same value of 1.242 mmol/gDW can be recovered by allowing water in and not water out, this is shown by running FBAsolveH20in.jl
+I also explored the case of not allowing water to exchange by setting the maximum value of the flux in an out to zero, and repeating the calculation by running FBAsolveNoH20.jl. This leads to a different maximum value for urea of 0.828 mmol/gDW. The same value of 1.242 mmol/gDW can be recovered by allowing water in and not water out, this is shown by running FBAsolveH20in.jl
 
 Although we only accounted for metabolite concentration in the upper bound of v1 and v4. I also explored the impact of not including them and using the upper bound of Vmaz*E for all of the reactions, in FBAsolveNoMetabolites.jl. This results as the same maximum value of 1.242 mmol/gDW-hr as before. This makes sense as this is the maximum value v2 can take (the lowest among v1-v4), and that does not change when changing the upper bound when increasing v1 and v4.
